@@ -11,7 +11,7 @@ namespace TranslucentPlugin
     [BepInDependency(ReactorPlugin.Id)]
     public class TemplatePlugin : BasePlugin
     {
-        public const string Id = "me.change.please";
+        public const string Id = "net.kunmc.lab";
 
         public Harmony Harmony { get; } = new Harmony(Id);
 
@@ -31,6 +31,16 @@ namespace TranslucentPlugin
             {
                 __instance.nameText.Text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
             }
+        }
+
+        private void vanish(PlayerControl playerControl)
+        {
+            playerControl.Visible = false;
+        }
+        
+        private void unvanish(PlayerControl playerControl)
+        {
+            playerControl.Visible = true;
         }
     }
 }
