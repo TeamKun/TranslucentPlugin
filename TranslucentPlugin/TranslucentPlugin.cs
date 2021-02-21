@@ -9,7 +9,7 @@ namespace TranslucentPlugin
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
-    public class TemplatePlugin : BasePlugin
+    public class TranslucentPlugin : BasePlugin
     {
         public const string Id = "net.kunmc.lab";
 
@@ -29,7 +29,7 @@ namespace TranslucentPlugin
         {
             public static void Postfix(PlayerControl __instance)
             {
-                __instance.nameText.Text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
+                __instance.nameText.Text = PluginSingleton<TranslucentPlugin>.Instance.Name.Value;
             }
         }
 
